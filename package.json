@@ -1,0 +1,17 @@
+{
+  "name": "chaibackend",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [
+    "javascript",
+    "backend",
+    "express"
+  ],
+  "license": "ISC",
+  "author": "chiranjibi kusari",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
