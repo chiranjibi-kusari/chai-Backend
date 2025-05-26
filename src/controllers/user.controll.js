@@ -128,8 +128,6 @@ const options={
 
 })
 
-
-
 const logoutUser=asyncHanduler(async(req,res)=>{
  await User.findByIdAndUpdate(
   req.user._id,
@@ -150,7 +148,7 @@ return res.status(200).clearCookie("accessToken",options).clearCookie("refreshTo
 
 const refreshAccessToken=asyncHanduler(async(req,res)=>{
   const incomingRefreshToken= req.cookie.refreshToken || req.body.refreshToken
-  if(incomingRefreshToken) throw new ApiError(400,"unauthorized request")
+  if(!incomingRefreshToken) throw new ApiError(400,"unauthorized request")
 
    try {
     const decodedToken= jwt.verify(incomingRefreshToken,process.env.REFRESH_TOKEN_SECRET)
